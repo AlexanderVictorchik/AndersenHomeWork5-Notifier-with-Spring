@@ -15,13 +15,13 @@ public class NotifierApplication {
         LocalTime sendTime = LocalTime.of(19, 30, 00);
 
         NotificationSender notificationSender = (NotificationSender)
-                applicationContext.getBean("");
+                applicationContext.getBean("notificationSender");
 
-//        while (true) {
-//            if (LocalTime.now().equals(sendTime)) {
-//                sendNotification();
-//            }
-//        }
-        notificationSender.sendNotification();
+        while (true) {
+            if (LocalTime.now().equals(sendTime)) {
+                notificationSender.sendNotification();
+            }
+        }
+
     }
 }
